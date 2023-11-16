@@ -1,6 +1,6 @@
 # import library streamlit
 import streamlit as st;
-from streamlit_extras import add_vertical_space as avs;
+# from streamlit_extras import add_vertical_space as avs;
 
 # library manipulation dataset
 import pandas as pd
@@ -98,13 +98,70 @@ with st.container():
     # labels
     st.error("Best of Game, Platform, Genre, Publisher on All Region")
 
-    df = dataset.groupby(name)[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales']].sum().sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
+    # func groupBarplot
+    def barplot(column, title, xlabel, ylabel):
         
-    fig = px.bar(sales_by_column, x=column, y=['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales'],
-                    barmode='group', labels={'value': 'Total Sales', 'variable': 'Region'}, 
-                    title="title")
+        # grouping on pandas 
+        sales_by_column = dataset.groupby(column)[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales']].aggregate("sum").sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
+        
+        # show barplot
+        fig = px.bar(sales_by_column, x=column, y=['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales'], barmode='group')
+        
+        colors = {
+            'NA_Sales': 'rgb(165,0,38)', 
+            'EU_Sales': 'rgb(215,48,39)', 
+            'JP_Sales': 'rgb(244,109,67)', 
+            'Other_Sales': 'rgb(253,174,97)'
+        }
+        for i, col in enumerate(['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']):
+            fig.update_traces(marker_color=colors[col], selector=dict(name=col), name=f'{col.split("_")[0]} Sales')
+
+        fig.update_layout(
+            title=title,
+            xaxis_title=xlabel,
+            yaxis_title=ylabel,
+            legend=dict(title='', orientation='h', yanchor='top', y=1.05, xanchor='center', x=0.5)
+        )
+        return fig
     
-    # visualization of sum video games sales
-    col1, col2 = st.columns([1,1], gap="medium")
+    # visualization of best game, platform, genre, publisher
+    col1, col2 = st.columns(2, gap="medium")
     with col1:
-        st.text("ABC")
+        col1.plotly_chart(
+            barplot(
+                'Name',
+                'Top 5 of game on all regions', 
+                'Game name', 
+                'Sum of Video Games'
+            ), use_container_width=True
+        )
+    with col2:
+        col2.plotly_chart(
+            barplot(
+                'Platform',
+                'Top 5 of platform on all regions', 
+                'Platform name', 
+                'Sum of Video Games'
+            ), use_container_width=True
+        )
+
+    # visualization of best game, platform, genre, publisher
+    col1, col2 = st.columns(2, gap="medium")
+    with col1:
+        col1.plotly_chart(
+            barplot(
+                'Genre',
+                'Top 5 of genre on all regions', 
+                'Genre name', 
+                'Sum of Video Games'
+            ), use_container_width=True
+        )
+    with col2:
+        col2.plotly_chart(
+            barplot(
+                'Publisher',
+                'Top 5 of publisher on all regions', 
+                'Publisher name', 
+                'Sum of Video Games'
+            ), use_container_width=True
+        )
