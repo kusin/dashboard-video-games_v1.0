@@ -5,7 +5,7 @@ import streamlit as st;
 import pandas as pd
 
 # library manipulation array
-import numpy as np
+# import numpy as np
 
 # library data visualization
 import plotly.express as px
