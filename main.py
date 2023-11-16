@@ -29,7 +29,7 @@ dataset = pd.read_csv("dataset/vgsales.csv")
 # container-header
 with st.container():
     st.markdown("## Exploratory Data Analysis of Video Games Sales")
-    st.markdown("- Created By. Aryajaya Alamsyah, Nov 2023 (link download on https://www.kaggle.com/datasets/gregorut/videogamesales)")
+    st.markdown("- Created By. Aryajaya Alamsyah, Okt 2023 (link download on https://www.kaggle.com/datasets/gregorut/videogamesales)")
 
 # container-dataset
 with st.container():
