@@ -1,5 +1,6 @@
 ## Exploration Data Analysis on Video Games Sales for Biginner
 - By Aryajaya Alamsyah
+- avaiable on https://dashboard-video-games-beginner.streamlit.app/
 
 ## Hardware Specifications for Web Development
 - Laptop HP Probook 440 G6
