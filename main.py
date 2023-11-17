@@ -28,7 +28,7 @@ dataset = pd.read_csv("dataset/vgsales.csv")
 
 # container-header
 with st.container():
-    st.markdown("## Exploratory Data Analysis of Video Games Sales")
+    st.markdown("## Exploratory Data Analysis of Video Games Sales v1.0")
     st.markdown("- Created By. Aryajaya Alamsyah, Okt 2023 (link download on https://www.kaggle.com/datasets/gregorut/videogamesales)")
 
 # container-dataset
@@ -119,6 +119,8 @@ with st.container():
             title=title,
             xaxis_title=xlabel,
             yaxis_title=ylabel,
+            xaxis=dict(tickangle=0),
+            yaxis=dict(tickangle=0),
             legend=dict(title='', orientation='h', yanchor='top', y=1.05, xanchor='center', x=0.5)
         )
         return fig
