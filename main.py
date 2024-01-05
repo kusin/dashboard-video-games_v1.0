@@ -62,7 +62,7 @@ with st.container():
     df.columns = ["Region", "Sales"]
     
     # visualization of sum video games sales
-    col1, col2 = st.columns([1,1], gap="medium")
+    col1, col2 = st.columns([1,1], gap="large")
     with col1:
         # show pieplot
         fig = px.pie(
@@ -126,7 +126,7 @@ with st.container():
         return fig
     
     # visualization of best game, platform, genre, publisher
-    col1, col2 = st.columns(2, gap="medium")
+    col1, col2 = st.columns(2, gap="large")
     with col1:
         col1.plotly_chart(
             barplot(
@@ -147,7 +147,7 @@ with st.container():
         )
 
     # visualization of best game, platform, genre, publisher
-    col1, col2 = st.columns(2, gap="medium")
+    col1, col2 = st.columns(2, gap="large")
     with col1:
         col1.plotly_chart(
             barplot(
