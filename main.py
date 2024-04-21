@@ -58,22 +58,17 @@ with st.container():
     st.plotly_chart(fig,use_container_width=True)
 
     # Sum video games sales on all region
-    df = dataset[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales']].aggregate("sum").sort_values(ascending=False).reset_index()
+    df = dataset[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']].aggregate("sum").sort_values(ascending=False).reset_index()
     df.columns = ["Region", "Sales"]
     
     # visualization of sum video games sales
     col1, col2 = st.columns([1,1], gap="large")
     with col1:
         # show pieplot
-        fig = px.pie(
-            df, labels="Region", values="Sales", hole=0.25
-        )
-        fig.update_traces(
-            marker=dict(colors=px.colors.diverging.RdBu, line=dict(color='#FFFFFF', width=2))
-        )
+        fig = px.pie(df, values='Sales', names='Region', hole=0.25, color_discrete_sequence=px.colors.sequential.RdBu)
         fig.update_layout(
             title = "Sales Video Games by Region",
-            legend=dict(orientation='h', x=0.05, y=0.0),
+            legend=dict(title='', orientation='h', yanchor='top', y=0.0, xanchor='center', x=0.5),
             showlegend=True,
         )
         st.plotly_chart(fig,use_container_width=True)
