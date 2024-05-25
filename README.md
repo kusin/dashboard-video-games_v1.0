@@ -1,6 +1,9 @@
 ## Exploration Data Analysis on Video Games Sales for Biginner
 - By Aryajaya Alamsyah
 
+## Demo Project
+- https://dashboard-video-games-v1.streamlit.app/
+
 ## Hardware Specifications for Web Development
 - Laptop HP Probook 440 G6
 - Processor : Intel i5-8265U, 4 cores and 8 threads, speed cpu 1,60 Ghz
