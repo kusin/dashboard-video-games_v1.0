@@ -12,8 +12,8 @@
 - Resolution : 1366 x 768 px
 
 ## Software Specifications for Web Development
-- OS : Linux Mint Cinnamon v.21.2
-- Compiler : Python last version
+- OS : Linux Ubuntu 24.04 LTS
+- Compiler : Python 3.11.9
 - Text Editor : VSCode last version
 - Web Browser : Google Chrome last version
 
