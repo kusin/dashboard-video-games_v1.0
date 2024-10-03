@@ -32,8 +32,8 @@ with st.container():
   st.markdown("- Created By. Aryajaya Alamsyah, Okt 2023 (link download on https://www.kaggle.com/datasets/gregorut/videogamesales)")
 
 # container-dataset
-with st.container():
-  st.dataframe(dataset, use_container_width=True)
+# with st.container():
+  # st.dataframe(dataset, use_container_width=True)
 
 # container-sales video games
 with st.container():
