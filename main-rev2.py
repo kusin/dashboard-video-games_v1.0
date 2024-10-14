@@ -1,6 +1,5 @@
 # library dashboard
 import streamlit as st
-from streamlit_extras.add_vertical_space import add_vertical_space
 
 # library visualization
 import plotly.express as px
@@ -19,7 +18,6 @@ st.markdown("## Dashboard of Video Games Sales Using Framework Streamlit")
 dataset = pd.read_csv("dataset/vgsales.csv")
 
 # container games-sales
-add_vertical_space(1)
 st.info("Exploration Data Analysis on Games Sales")
 col1, col2 = st.columns([0.5,0.5], gap="small")
 
@@ -42,7 +40,6 @@ with col2:
   st.plotly_chart(fig)
 
 # container games-sales
-add_vertical_space(1)
 st.info("Exploration Data Analysis on Global Sales")
 col1, col2, col3, col4 = st.columns([0.25,0.25,0.25,0.25], gap="small")
 
