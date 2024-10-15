@@ -1,9 +1,6 @@
 ## Exploration Data Analysis on Video Games Sales for Biginner
 - By Aryajaya Alamsyah
 
-## Demo Project
-- https://dashboard-video-games-v1.streamlit.app/
-
 ## Hardware Specifications for Web Development
 - Laptop HP Probook 440 G6
 - Processor : Intel i5-8265U, 4 cores and 8 threads, speed cpu 1,60 Ghz
@@ -17,8 +14,10 @@
 - Text Editor : VSCode last version
 - Web Browser : Google Chrome last version
 
-## List of libraries used
-- Streamlit
-- Pandas
-- Numpy
-- Plotly
+## Library Requirements
+- Numpy 1.26.4
+- Pandas 2.2.3
+- Matplotlib 3.8.4
+- Seaborn 0.13.2
+- Plotly 5.24.1
+- Streamlit 1.38.0
